@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>mini project</title>
+</head>
+<body>
+    <h1>fertilizer recommendation system</h1>
+    <form action="/predict" method="POST">
+        <label>Enter the Nitrogen value: </label>
+        <input type="text" id="Nitrogen" name="Nitrogen"  required>
+        <br><br>
+        <label>Enter the Phosphorus value: </label>
+        <input type="text" id="Phosphorus" name="Phosphorus"  required>
+        <br><br>
+        <label>Enter the Potassium value: </label>
+        <input type="text" id="Potassium" name="Potassium"  required>
+        <br><br>
+        <label>Enter the pH value: </label>
+        <input type="text" id="pH" name="pH" required>
+        <br><br>
+        
+        
+        <button type="submit">Get Recommendation</button>
+    </form>
+    {% if result %}
+        <h4>Recommend fertilizer</h4>
+        <table cellspacing="3" bgcolor="#000000">
+            <tr bgcolor="#ffffff">
+                <th>Mdel name</th>
+                <th>fertilizer name</th>
+            </tr>
+            <tr bgcolor="#ffffff">
+                <th>RandomForestClassifier</th>
+                <th>{{result}}</th>
+            </tr>
+            <tr bgcolor="#ffffff">
+                <th>naive bayes</th>
+                <th>{{result1}}</th>
+            </tr>
+            <tr bgcolor="#ffffff">
+                <th>SVC</th>
+                <th>{{result2}}</th>
+            </tr>
+            <tr bgcolor="#ffffff">
+                <th>DecisionTreeClassifier</th>
+                <th>{{result3}}</th>
+            </tr>
+
+        </table>
+    {% endif %}
+    
+</body>
+</html>
